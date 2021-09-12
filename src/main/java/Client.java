@@ -1,7 +1,5 @@
 import java.io.*;
 import java.net.Socket;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class Client {
 
@@ -11,6 +9,7 @@ public class Client {
     private DataOutputStream out;
     private InputStream inFromServer;
 
+    // function for client connect to server
     public void start(int port, String serverName) {
         try {
             System.out.println("Connecting to "
@@ -24,6 +23,7 @@ public class Client {
         }
     }
 
+    //function for client send data to server / SYNC
     public String sendMessage(String message) {
         String data = null;
         try {
@@ -40,6 +40,7 @@ public class Client {
         return data;
     }
 
+    // function for client receive data from server / ACK
     public String receiveMessage() {
         String data = null;
         try {
@@ -56,6 +57,7 @@ public class Client {
         return data;
     }
 
+    //Close connection client
     public void close() {
         try {
             if (client != null)

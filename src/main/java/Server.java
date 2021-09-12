@@ -11,7 +11,7 @@ public class Server {
     private DataInputStream in;
     private DataOutputStream out;
 
-    //Sync / start connection
+    //start connection
     public void start(int port, int timeOut) {
         //init ServerSocket
         try {
